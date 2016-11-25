@@ -20,10 +20,19 @@ def pets_sold(pet_shop)
     return pet_shop[:admin][:pets_sold]
 end
 
+# Test 4 -- stock count, expecting 6 pets to be found
 def stock_count(pet_shop)
     return pet_shop[:pets].count
 end
 
+#Test 5 -- find all instance of a breed in the collection
+def pets_by_breed(pet_shop,breed)
+  breed_array = Array.new
+  for pet in pet_shop[:pets]
+    pet[:breed] == breed ? breed_array << pet[:breed] : false
+  end
+  return breed_array
+end
 
 
 
