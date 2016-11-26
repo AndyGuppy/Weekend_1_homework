@@ -48,7 +48,7 @@ end
 
 # Test 7 -- Remove a pet by name
 def remove_pet_by_name(pet_shop,name)
-  pet_shop[:pets].delete_if { |h| h[:name] == name }
+  return pet_shop[:pets].delete_if { |h| h[:name] == name }
   # return
   # for pet in pet_shop[:pets]
   #   if pet[:name] == name
@@ -69,7 +69,11 @@ def customer_pet_count(customer)
   return customer[:pets].count
 end
 
-
+# Test 10 -- add a pet to a customer
+def add_pet_to_customer(customer,new_pet)
+  customer[:pets] << new_pet
+  return
+end
 
 
 
