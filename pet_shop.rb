@@ -36,15 +36,30 @@ end
 
 # Test 6 -- find all pets by name
 def find_pet_by_name(pet_shop,name)
-  name_hash = Hash.new
+  # name_hash = Hash.new
   for pet in pet_shop[:pets]
-    pet[:name] == name ? name_hash = pet :false
+    if pet[:name] == name 
+      return pet
+    end
   end
-  return name_hash
+
+  return nil
 end
 
+# Test 7 -- Remove a pet by name
+def remove_pet_by_name(pet_shop,name)
+  pet_shop[:pets].delete_if { |h| h[:name] == name }
+  # return
+  # for pet in pet_shop[:pets]
+  #   if pet[:name] == name
+  #     return pet_shop[:pets].delete( pet )
+  #   end
+  # end
+  # return nil
+end
 
-
-
-
+# Test 8 -- Add a pet to stock
+def add_pet_to_stock(pet_shop,new_customer)
+  pet_shop[:pets]<<new_customer
+end
 
