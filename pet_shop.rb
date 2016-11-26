@@ -61,5 +61,17 @@ end
 # Test 8 -- Add a pet to stock
 def add_pet_to_stock(pet_shop,new_customer)
   pet_shop[:pets]<<new_customer
+  return
 end
+
+# Test 9 -- count the customers pets
+def customer_pet_count(customer)
+  return customer[:pets].count
+end
+
+
+
+
+
+
 
