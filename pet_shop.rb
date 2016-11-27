@@ -85,5 +85,30 @@ def customer_can_afford_pet(customer, new_pet)
   # end
 end
 
-
+def  sell_pet_to_customer(pet_shop, new_pet, customer)
+  # Check if pet exists
+  if new_pet == nil
+    # Pets is not found
+    return # exit the function - no point in proceeding
+  else
+    # Pet does exist
+    if customer_can_afford_pet(customer, new_pet) == true 
+      # Customer can afford the pet
+      # Add pet to customer data
+      add_pet_to_customer(customer, new_pet)
+      #Remove the pet from the petshop stock
+      remove_pet_by_name(pet_shop,new_pet[:name])
+      #Add the price of the pet to the total of the petshop
+      add_or_remove_cash(pet_shop,new_pet[:price])
+      # Adjust number of pets sold
+      pet_shop[:admin][:pets_sold] =+ 1
+      # Remove the price of the pet from the customers funds
+      customer[:cash] =- new_pet[:price]
+      return # exit the function - no point in proceeding
+    else
+      # Customer cannot afford the pet
+      return # exit the function - no point in proceeding
+    end
+  end
+end
 
