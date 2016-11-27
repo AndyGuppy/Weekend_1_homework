@@ -75,7 +75,15 @@ def add_pet_to_customer(customer,new_pet)
   return
 end
 
-
+# Test 11 -- Optional Homework
+def customer_can_afford_pet(customer, new_pet)
+  return customer[:cash] < new_pet[:price] ? (false) : (true)
+  # if customer[:cash] < new_pet[:price]
+  #   return false
+  # else
+  #   return true
+  # end
+end
 
 
 
